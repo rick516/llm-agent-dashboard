@@ -1,12 +1,18 @@
+**/node_modules
+
+**/.cache
+**/build
+**/dist
+**/node_modules
+**/coverage
+**/test-results
+*.env
+
+.turbo
+.turbo/cache
+
+coverage/
+test-results/
 
 .vscode/
 
-*.env
-
-docs-private/
-
-node_modules
-
-/.cache
-/build
-.env

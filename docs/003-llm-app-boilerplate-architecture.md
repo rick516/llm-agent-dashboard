@@ -23,6 +23,36 @@
 
 ### 2.2 コンポーネント説明
 
+```
+.
+├── apps
+│   └── web
+│       ├── app
+│       │   ├── routes
+│       │   ├── components
+│       │   ├── hooks
+│       │   ├── utils
+│       │   └── styles
+│       ├── public
+│       ├── server
+│       │   ├── models
+│       │   ├── services
+│       │   └── middlewares
+│       ├── prisma
+│       ├── tests
+│       └── package.json
+├── packages
+│   ├── eslint-config-custom
+│   ├── tailwind-config
+│   └── tsconfig
+├── .github
+│   └── workflows
+├── terraform
+├── package.json
+├── pnpm-workspace.yaml
+└── turbo.json
+```
+
 1. **Remix.js (フロントエンド/バックエンド)**: 
    - サーバーサイドレンダリングによる高速な初期ロード
    - loader/actionを使用した効率的なデータフェッチと状態管理
