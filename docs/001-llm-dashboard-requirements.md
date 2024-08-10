@@ -138,7 +138,8 @@
    - フロントエンド：Remix, Tailwind CSS, shadcn/ui
    - バックエンド：Remix(loader/ action), Prisma
    - データベース：PostgreSQL
-   - インフラ：GCP Cloud Run, Cloud Storage, Cloud SQL
+   - インフラ：GCP Cloud Run, Cloud Storage, Cloud SQL, Cloud Build, Secret Manager
+   - 認証: Firebase Authentication, Identity Platform
    - IaC: Terraform
    - ディレクトリ: モノリポ(Turborepo / pnpm)
    - CI/CD: GitHub Actions
