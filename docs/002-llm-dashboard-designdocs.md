@@ -4,10 +4,13 @@
 
 ### 1.1 全体構成
 - フロントエンド: Remix.js + Tailwind CSS + shadcn/ui
-- バックエンド: Remix.js (loader/action)
+- バックエンド: Remix.js (loader/action) + Prisma + WebSocket
 - データベース: PostgreSQL
 - ORM: Prisma
-- インフラ: GCP (Cloud Run, Cloud Storage, Cloud SQL)
+- リアルタイム通信: WebSocket (Socket.io)
+- タスク管理: Apache Kafka
+- LLMインテグレーション: LangChain
+- インフラ: GCP (Cloud Run, Cloud Storage, Cloud SQL, Vertex AI)
 - IaC: Terraform
 - CI/CD: GitHub Actions
 
@@ -22,6 +25,14 @@
                                 |
                                 v
                         [外部LLM API]
+                                ^
+                                |
+                                v
+                        [Apache Kafka]
+                                ^
+                                |
+                                v
+                        [LangChain]
 ```
 
 ### 1.3 コンポーネント説明
@@ -29,6 +40,8 @@
 - Cloud SQL: ユーザーデータ、プロジェクト情報、タスク情報を保存
 - Cloud Storage: 大容量データ（タスク結果など）の保存
 - 外部LLM API: GPT-4, Claude, PaLM等の外部APIとの連携
+- Apache Kafka: タスク管理とメッセージングシステム
+- LangChain: LLMインテグレーションと自律的フィードバックループ
 
 ## 2. データモデル
 

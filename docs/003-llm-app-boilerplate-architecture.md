@@ -9,7 +9,7 @@
 ### 2.1 全体構成
 
 - フロントエンド: Remix.js + Tailwind CSS + shadcn/ui
-- バックエンド: Remix.js (loader/action) + Prisma
+- バックエンド: Remix.js (loader/action) + Prisma + WebSocket
 - 主要データベース: PostgreSQL
 - ベクターデータベース: Pinecone
 - キャッシュ: Redis
@@ -84,10 +84,12 @@
 ## 3. データフロー
 
 1. ユーザーリクエスト → Remix.js (フロントエンド)
-2. Remix.js (バックエンド) → PostgreSQL/Pinecone/Redis (データ取得)
-3. Remix.js (バックエンド) → Kafka (非同期タスク登録)
-4. Kafka → バックグラウンドワーカー → Vertex AI (LLM処理)
-5. 処理結果 → Kafka → Remix.js (バックエンド) → ユーザー
+2. Remix.js (フロントエンド) → WebSocket → Remix.js (バックエンド)
+3. Remix.js (バックエンド) → PostgreSQL/Pinecone/Redis (データ取得)
+4. Remix.js (バックエンド) → Kafka (非同期タスク登録)
+5. Kafka → バックグラウンドワーカー → LangChain → Vertex AI (LLM処理)
+6. LangChain → フィードバックループ処理
+7. 処理結果 → Kafka → Remix.js (バックエンド) → WebSocket → Remix.js (フロントエンド) → ユーザー
 
 ## 4. スケーラビリティ戦略
 
@@ -172,7 +174,7 @@
    - Swagger/OpenAPIによるAPI文書の自動生成
    - Storybookによるコンポーネントカタログの作成
 
-## 10. 将来の拡張性
+## 10. 将��の拡張性
 
 1. **マイクロサービスへの移行**:
    - 現状のモノリシック構造からの段階的な分割
