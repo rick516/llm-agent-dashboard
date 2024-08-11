@@ -43,7 +43,7 @@
 5. [フロントエンド設計](docs/005-frontend-design-document.md)
 6. [ユースケースとモデリング](docs/006-use-case-and-modeling.md)
 7. [リアルタイム対話アーキテクチャ](docs/007-realtime-interactive-architecture.md)
-8. [FastAPI LLM統合設計](docs/008-fastapi-llm-integration-design.md)
+8. [API LLM統合設計](docs/008-fastapi-llm-integration-design.md)
 
 ## セットアップ手順
 
@@ -95,10 +95,6 @@
 ## デプロイメント
 
 CI/CDパイプラインはGitHub Actionsを使用しています。main ブランチへのマージ後、自動的にステージング環境にデプロイされます。
-
-## 貢献
-
-プロジェクトへの貢献を歓迎します。詳細は[CONTRIBUTING.md](CONTRIBUTING.md)を参照してください。
 
 ## ライセンス
 
