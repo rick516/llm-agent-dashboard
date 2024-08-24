@@ -4,12 +4,13 @@
   "globalEnv": ["NODE_ENV"],
   "tasks": {
     "dev": {
-      "persistent": true,
-      "cache": true
+      "cache": true,
+      "dependsOn": ["^dev"],
+      "outputs": ["apps/**"]
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", "build/**"]
     },
     "start": {
       "dependsOn": ["build"]

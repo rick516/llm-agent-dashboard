@@ -1,0 +1,9 @@
+{
+  "name": "@repo/api",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "uvicorn main:app --reload",
+    "build": "pip install -r requirements.txt",
+    "test": "pytest"
+  }
+}
